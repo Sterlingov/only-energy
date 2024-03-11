@@ -1,0 +1,194 @@
+
+.head{
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 65px;
+  background:rgb(41, 41, 41);
+}
+
+ul{
+list-style: none;
+margin: 0;
+padding: 10px;
+}
+
+a{
+font-size: 30px;
+padding: 20px;
+color:rgb(116, 113, 113);
+text-decoration: none;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+transition: .5s;
+}
+b{
+  font-size: 30px;
+  padding: 20px;
+  color:rgb(116, 113, 113);
+  text-decoration: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+a:hover{
+  color:rgb(214, 131, 240);
+  text-decoration: none;
+  opacity: 1;
+
+}
+li{
+display: inline;
+}
+
+/* шапка */
+body{
+  height: 5000px;
+  background: linear-gradient(to bottom left, rgb(35, 63, 88),50%, rgb(87, 40, 84));
+  background-repeat: repeat-x;
+
+}
+.starttext{
+  color: rgb(255, 255, 255);
+  font-size: 70px;
+  font-family: cuyabra;
+  padding: 0px;
+  margin-top: 250px;
+max-width: 600px;
+margin-left:10%;
+  text-transform: capitalize;
+}
+/* поиск */
+.search{
+    position: relative;
+    width: 300px;
+    height: 40px;
+}
+
+.search input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background: transparent;
+  border: 2px solid rgb(70, 31, 73);
+  outline: none;
+  border-radius: 14px;
+  padding: 0 10px 0 45px;
+  backdrop-filter: blur(10px);
+}
+.search input{
+  color: #fff;
+}
+
+.search input::placeholder{
+  color: #fff;
+}
+
+/* поиск */
+.ag-img{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 50%;
+  object-fit: cover;
+  opacity: 0.35;
+  z-index:-100;
+}
+/* шапка */
+
+.left-p{
+  display: flex;
+  justify-content: flex-start;
+  width: 95%;
+}
+
+.right-p{
+  display: flex;
+  justify-content: flex-end;
+  width: 95%;
+}
+.poch{
+  display: flex;
+  justify-content: center;
+}
+.odin1{
+display:flex;
+align-items: flex-start;
+flex-direction: column;
+justify-content: center;
+max-width:850px;
+margin-left: 10%;
+
+background: linear-gradient(to left, rgb(122, 97, 161), rgb(94, 153, 138));
+border-radius: 35px;
+padding-left: 20px;
+color: rgb(255, 255, 255);
+font-size: 35px;
+font-family: cuyabra;
+text-transform: capitalize;
+border-width: 50vh;
+}
+.odin2{
+  display:flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  max-width:850px;
+  margin-left: 10%;
+
+  background: linear-gradient(to right, rgb(96, 81, 150), rgb(145, 1, 1));
+  border-radius: 35px;
+  padding-left: 20px;
+  color: rgb(255, 255, 255);
+  font-size: 35px;
+  font-family: cuyabra;
+  text-transform: capitalize;
+  }
+
+.odinsh{
+  display:flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  max-width:450px;
+  margin-left: 10%;
+  color: rgb(255, 255, 255);
+  font-size: 50px;
+  font-family: cuyabra;
+  text-transform: capitalize;
+  }
+
+
+.odin1:nth-of-type(){
+align-self: flex-start;
+
+}
+.odin2:nth-of-type(){
+  align-self: flex-end;
+}
+
+.odinstart{
+
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  font-family: cuyabra;
+  padding: 0px;
+  margin-top: 120px;
+  margin-left: 100px;
+  margin-right: 500px;
+  padding-right: 100px;
+  text-transform: none;
+}
+
+/* подключалки */
+@font-face {
+  font-family: "cuyabra";
+  src: url('media/fonts/cuyabra-Regular\ [RUS\ by\ Zephyrus].ttf');
+}
