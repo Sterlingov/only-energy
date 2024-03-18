@@ -49,6 +49,7 @@ body{
   height: 5000px;
   background: linear-gradient(to bottom left, rgb(35, 63, 88),50%, rgb(87, 40, 84));
   background-repeat: repeat-x;
+  font-family: cuyabra;
 
 }
 .starttext{
@@ -66,6 +67,8 @@ margin-left:10%;
     position: relative;
     width: 300px;
     height: 40px;
+    display: flex;
+    float: right;
 }
 
 .search input{
@@ -101,7 +104,7 @@ margin-left:10%;
   opacity: 0.35;
   z-index:-100;
 }
-/* шапка */
+
 
 .left-p{
   display: flex;
@@ -128,6 +131,7 @@ margin-left: 10%;
 
 background: linear-gradient(to left, rgb(122, 97, 161), rgb(94, 153, 138));
 border-radius: 35px;
+padding: 15px;
 padding-left: 20px;
 color: rgb(255, 255, 255);
 font-size: 35px;
@@ -144,7 +148,8 @@ border-width: 50vh;
   margin-left: 10%;
 
   background: linear-gradient(to right, rgb(96, 81, 150), rgb(145, 1, 1));
-  border-radius: 35px;
+  border-radius: 40px;
+  padding: 15px;
   padding-left: 20px;
   color: rgb(255, 255, 255);
   font-size: 35px;
@@ -187,6 +192,19 @@ align-self: flex-start;
   text-transform: none;
 }
 
+#papaotdaymnedevstvennost{
+color: aliceblue;
+font-size: 60px;
+font-family: cuyabra ;
+
+}
+
+.vk{
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  
+}
 /* подключалки */
 @font-face {
   font-family: "cuyabra";
