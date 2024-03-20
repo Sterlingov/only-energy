@@ -2,26 +2,37 @@ import asyncio
 import logging
 import sys
 
-from aiogram import Bot, Dispatcher, Router, types
-from aiogram.enums import ParseMode
-from aiogram.filters import CommandStart
+from aiogram import Bot, Dispatcher
 from aiogram.types import Message
-from aiogram.utils.markdown import hbold
 
 from config_reader import config
+from database import Database
 
-dp = Dispatcher()
 channel = config.channel_id
+dp = Dispatcher()
+db = Database()
+bot = Bot(config.bot_token.get_secret_value())
 
 
 @dp.channel_post(lambda p: p.chat.id == channel and p.photo)
 async def main_post_handler(message: Message) -> None:
-    print(message.caption)
+    post = message.caption.split('\n')
+    path_to_image = '../images/' + message.photo[-1].file_unique_id + '.jpg'
+    await message.bot.download(message.photo[-1].file_id, destination=path_to_image)
+    name = post[0]
+    desc = post[1]
+    price = int(''.join([i for i in post[-1] if i.isnumeric()]))
+    mark = 0
+    for i in post[-2]:
+        if i.isnumeric():
+            mark = int(i)
+            break
+    await db.create_post(name, desc, price, mark, path_to_image)
 
 
 async def main() -> None:
-    bot = Bot(config.bot_token.get_secret_value())
     await bot.delete_webhook(drop_pending_updates=True)
+    await db.create_pool('localhost', 5432, 'postgres', 'postgres', config.postgres_password.get_secret_value())
     await dp.start_polling(bot)
 
 
