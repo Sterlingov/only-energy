@@ -1,2 +1,5 @@
 /bot/.env
 /images/
+/.idea
+/bot/__pycache__
+/server/.env
