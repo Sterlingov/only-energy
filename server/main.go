@@ -21,7 +21,8 @@ func init() {
 func main() {
 	log.Print("Server started")
 	r := mux.NewRouter()
-	r.Methods("GET").Path("/posts").HandlerFunc(delivery.AuthMiddleware(delivery.GetPosts))
+	r.Methods("GET").Path("/posts").HandlerFunc(delivery.AuthMiddleware(delivery.GetPostsHandler))
+	r.Methods("GET").Path("/image/{imageId}").HandlerFunc(delivery.AuthMiddleware(delivery.GetImageHandler))
 	if err := http.ListenAndServe(":9000", r); err != nil {
 		log.Fatal(err)
 	}

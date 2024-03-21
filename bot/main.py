@@ -27,7 +27,7 @@ async def main_post_handler(message: Message) -> None:
         if i.isnumeric():
             mark = int(i)
             break
-    await db.create_post(name, desc, price, mark, path_to_image)
+    await db.create_post(name, desc, price, mark, message.photo[-1].file_unique_id + '.jpg')
 
 
 async def main() -> None:
