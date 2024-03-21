@@ -3,3 +3,4 @@
 /.idea
 /bot/__pycache__
 /server/.env
+.vscode/launch.json
