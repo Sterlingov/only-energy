@@ -14,3 +14,9 @@ class Database:
                 INSERT INTO posts(name, description, price, mark, image_path)
                 VALUES($1, $2, $3, $4, $5)
             ''', name, desc, price, mark, img_path)
+    
+    async def create_table_posts(self):
+        async with self.pool.acquire() as conn:
+            await conn.execute('''
+                CREATE TABLE IF NOT EXISTS posts(name VARCHAR(50), description VARCHAR, price INTEGER, mark INTEGER, image_path VARCHAR(40))
+            ''')
