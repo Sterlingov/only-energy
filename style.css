@@ -47,7 +47,7 @@ display: inline;
 /* шапка */
 body{
   height: 5000px;
-  background: linear-gradient(to bottom left, rgb(35, 63, 88),50%, rgb(87, 40, 84));
+  background: linear-gradient(to bottom left, rgb(35, 63, 88), 50%, rgb(87, 40, 84));
   background-repeat: repeat-x;
   font-family: cuyabra;
 
@@ -136,7 +136,7 @@ padding-left: 20px;
 color: rgb(255, 255, 255);
 font-size: 35px;
 font-family: cuyabra;
-text-transform: capitalize;
+text-transform: none;
 border-width: 50vh;
 }
 .odin2{
@@ -154,7 +154,7 @@ border-width: 50vh;
   color: rgb(255, 255, 255);
   font-size: 35px;
   font-family: cuyabra;
-  text-transform: capitalize;
+  text-transform: none;
   }
 
 .odinsh{
