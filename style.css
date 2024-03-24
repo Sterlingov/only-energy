@@ -1,9 +1,9 @@
 
-.head{
+.header{
   width: 100%;
   position: fixed;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   z-index: 9;
   top: 0;
@@ -199,12 +199,19 @@ font-family: cuyabra ;
 
 }
 
-.vk{
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  
+.logo{
+  height: 65px;
+  margin-left: 40px;
 }
+
+.social-media-logo{
+  height: 65px;
+}
+
+.social-media{
+  margin-right: 40px;
+}
+
 /* подключалки */
 @font-face {
   font-family: "cuyabra";
