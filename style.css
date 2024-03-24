@@ -212,6 +212,28 @@ font-family: cuyabra ;
   margin-right: 40px;
 }
 
+/* посты */
+.post{
+  display:flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  max-width:850px;
+  margin-left: 10%;
+  
+  background: linear-gradient(to left, rgb(122, 97, 161), rgb(94, 153, 138));
+  border-radius: 35px;
+  padding: 15px;
+  padding-left: 20px;
+  color: rgb(255, 255, 255);
+  font-size: 35px;
+  font-family: cuyabra;
+  text-transform: none;
+  border-width: 50vh;
+  }
+  .fixanite{
+    margin-top: 5%;
+  }
 /* подключалки */
 @font-face {
   font-family: "cuyabra";
