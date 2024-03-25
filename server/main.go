@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
 	"server/internal/delivery"
 
 	"github.com/gorilla/mux"
@@ -20,10 +21,10 @@ func init() {
 
 func main() {
 	log.Print("Server started")
-	r := mux.NewRouter()
-	r.Methods("GET").Path("/posts").HandlerFunc(delivery.AuthMiddleware(delivery.GetPostsHandler))
-	r.Methods("GET").Path("/image/{imageId}").HandlerFunc(delivery.AuthMiddleware(delivery.GetImageHandler))
-	if err := http.ListenAndServe(":9000", r); err != nil {
+	m := mux.NewRouter()
+	m.Methods("GET").Path("/posts").HandlerFunc(delivery.LoggerMiddleware(delivery.AuthMiddleware(delivery.GetPostsHandler)))
+	m.Methods("GET").Path("/image/{imageId}").HandlerFunc(delivery.LoggerMiddleware(delivery.AuthMiddleware(delivery.GetImageHandler)))
+	if err := http.ListenAndServe(os.Getenv("DOMAIN")+":"+os.Getenv("PORT"), m); err != nil {
 		log.Fatal(err)
 	}
 }
