@@ -10,6 +10,7 @@ import (
 func GetPostsHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.Write(service.GetPosts())
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 }
 
 func GetImageHandler(w http.ResponseWriter, r *http.Request) {
