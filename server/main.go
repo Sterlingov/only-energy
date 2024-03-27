@@ -6,6 +6,7 @@ import (
 	"os"
 	"server/internal/delivery"
 
+	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
 )
@@ -24,7 +25,9 @@ func main() {
 	m := mux.NewRouter()
 	m.Methods("GET").Path("/posts").HandlerFunc(delivery.LoggerMiddleware(delivery.AuthMiddleware(delivery.GetPostsHandler)))
 	m.Methods("GET").Path("/image/{imageId}").HandlerFunc(delivery.LoggerMiddleware(delivery.AuthMiddleware(delivery.GetImageHandler)))
-	if err := http.ListenAndServe(os.Getenv("DOMAIN")+":"+os.Getenv("PORT"), m); err != nil {
+	originsOk := handlers.AllowedOrigins([]string{"*"})
+	serverAddr := os.Getenv("DOMAIN") + ":" + os.Getenv("PORT")
+	if err := http.ListenAndServe(serverAddr, handlers.CORS(originsOk)(m)); err != nil {
 		log.Fatal(err)
 	}
 }
