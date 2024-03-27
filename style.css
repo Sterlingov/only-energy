@@ -204,23 +204,69 @@ font-family: cuyabra ;
   margin-left: 40px;
 }
 
+.logo-a{
+  width: 300px;
+}
+
 .social-media-logo{
   height: 65px;
 }
 
 .social-media{
   margin-right: 40px;
+  width: 300px;
+}
+
+.obz{
+  margin-top: 5%;
+  text-align: center;
+  font-family: cuyabra;
+  color: white;
+  font-size: 50px;
+  margin-bottom: 3%;
+}
+
+.post-image{
+  width: 15vw;
+}
+
+.post-desc-h{
+  margin: 0;
+}
+
+.post-desc{
+  width: 25vw;
+  display: inline;
+  word-wrap: break-word;
+  font-size: 20px;
+  align-self: flex-start;
+}
+
+.post-field{
+  align-self: flex-start;
+  margin: 0;
+  font-size: 25px;
+  width: 25vw;
 }
 
 /* посты */
+.posts{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
 .post{
   display:flex;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
-  justify-content: center;
-  max-width:850px;
-  margin-left: 10%;
-  
+  width: 26vw;
+  height: 900px;
   background: linear-gradient(to left, rgb(122, 97, 161), rgb(94, 153, 138));
   border-radius: 35px;
   padding: 15px;
@@ -230,10 +276,7 @@ font-family: cuyabra ;
   font-family: cuyabra;
   text-transform: none;
   border-width: 50vh;
-  }
-  .fixanite{
-    margin-top: 5%;
-  }
+}
 /* подключалки */
 @font-face {
   font-family: "cuyabra";
