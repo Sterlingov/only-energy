@@ -1,4 +1,7 @@
-
+*{
+  margin: 0;
+  padding: 0;
+}
 .header{
   width: 100%;
   position: fixed;
@@ -46,7 +49,6 @@ display: inline;
 
 /* шапка */
 body{
-  height: 5000px;
   background: linear-gradient(to bottom left, rgb(35, 63, 88), 50%, rgb(87, 40, 84));
   background-repeat: repeat-x;
   font-family: cuyabra;
@@ -209,11 +211,12 @@ font-family: cuyabra ;
 }
 
 .social-media-logo{
-  height: 65px;
+  width: 45px;
+  float: right;
 }
 
 .social-media{
-  margin-right: 40px;
+  
   width: 300px;
 }
 
@@ -276,6 +279,16 @@ font-family: cuyabra ;
   font-family: cuyabra;
   text-transform: none;
   border-width: 50vh;
+}
+.footer{
+  width: 100%;
+  position:relative;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  z-index: 8;
+  height: 400px;
+  background:rgb(41, 41, 41);
 }
 /* подключалки */
 @font-face {
