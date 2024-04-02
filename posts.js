@@ -1,15 +1,20 @@
 document.body.onload = createPosts;
 var postsContainer = document.getElementsByClassName("posts")[0]
 var postCount = document.getElementsByClassName("count-p")[0]
+var searchForm = document.getElementsByClassName("search-form")[0]
+const apiUrl = "http://176.53.160.183"
+const SSH = "SuperSecretHeader"
+const token = "1h4v34b4d1m461n4710n"
 
 
 function createPosts() {
     var request = new XMLHttpRequest();
-    request.open("GET", "http://176.53.160.183/posts"); 
+    var url = apiUrl + "/posts"
+    request.open("GET", url)
     request.responseType = "json"; 
-    request.setRequestHeader('SuperSecretHeader', '1h4v34b4d1m461n4710n')
+    request.setRequestHeader(SSH, token)
     request.onload = function(){ 
-        postCount.innerHTML += request.response.length
+        postCount.innerHTML = "Кол-во постов: " + request.response.length
         request.response.forEach(element => {
            createPost(element)
         });
@@ -49,3 +54,37 @@ function createPost(element){
 
     postsContainer.appendChild(newPost)
 }
+
+function getPostSearch(query) {
+    var url = apiUrl + "/posts?search=" + query
+    var request = new XMLHttpRequest()
+    request.open("GET", url)
+    request.responseType = "json"; 
+    request.setRequestHeader(SSH, token)
+    request.onload = function(){
+        searchForm.reset()
+        postsContainer.innerHTML = null
+        postCount.innerHTML = "Кол-во постов: " + request.response.length
+        if (request.response.length != 0){
+            request.response.forEach(element => {
+            createPost(element)
+            });
+        }else{
+            var notFound = document.createElement("p")
+            notFound.innerHTML = "Ничего не найдено("
+            postsContainer.appendChild(emptyDiv)
+            postsContainer.appendChild(notFound)
+        }
+    }
+    request.send();
+}
+
+function searchHandler(event){
+    event.preventDefault()
+    let formData = new FormData(searchForm)
+    query = formData.get("search")
+    getPostSearch(query)
+}
+
+searchForm.addEventListener("submit", searchHandler)
+

@@ -49,7 +49,7 @@ body{
   background: linear-gradient(to bottom left, rgb(35, 63, 88), 50%, rgb(87, 40, 84));
   background-repeat: repeat-x;
   font-family: cuyabra;
-
+  height: auto;
 }
 .starttext{
   color: rgb(255, 255, 255);
