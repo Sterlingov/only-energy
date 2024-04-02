@@ -200,11 +200,28 @@ font-family: cuyabra ;
 
 .logo{
   height: 65px;
-  margin-left: 40px;
 }
 
 .logo-a{
-  width: 300px;
+  padding: 0;
+  height: 65px;
+}
+
+.logo-container{
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@keyframes flicker{
+  from {opacity: 1;}
+  to {opacity: 0.2;}
+}
+
+#hello{
+  color: yellow;
+  animation: flicker 2s ease-in-out infinite alternate;
 }
 
 .social-media-logo{
@@ -214,7 +231,7 @@ font-family: cuyabra ;
 
 .social-media{
   
-  width: 300px;
+  width: 400px;
 }
 
 .obz{
