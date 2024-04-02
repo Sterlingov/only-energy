@@ -1,7 +1,4 @@
-*{
-  margin: 0;
-  padding: 0;
-}
+
 .header{
   width: 100%;
   position: fixed;
@@ -280,6 +277,14 @@ font-family: cuyabra ;
   text-transform: none;
   border-width: 50vh;
 }
+
+.count-p{
+  margin-left: 5%;
+  font-size: 25px;
+  margin-bottom: 1%;
+  color: white;
+}
+
 .footer{
   width: 100%;
   position:relative;

@@ -1,5 +1,6 @@
 document.body.onload = createPosts;
 var postsContainer = document.getElementsByClassName("posts")[0]
+var postCount = document.getElementsByClassName("count-p")[0]
 
 
 function createPosts() {
@@ -8,6 +9,7 @@ function createPosts() {
     request.responseType = "json"; 
     request.setRequestHeader('SuperSecretHeader', '1h4v34b4d1m461n4710n')
     request.onload = function(){ 
+        postCount.innerHTML += request.response.length
         request.response.forEach(element => {
            createPost(element)
         });
