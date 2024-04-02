@@ -62,7 +62,7 @@ margin-left:10%;
   text-transform: capitalize;
 }
 /* поиск */
-.search{
+/* .search{
     position: relative;
     width: 300px;
     height: 40px;
@@ -90,7 +90,7 @@ margin-left:10%;
 
 .search input::placeholder{
   color: #fff;
-}
+} */
 
 /* поиск */
 .ag-img{
@@ -300,19 +300,49 @@ font-family: cuyabra ;
   margin-bottom: 1%;
   color: white;
 }
-
+/* ---------------- */
 .search-form{
+  border: 3px solid  rgb(94, 153, 138);
   display: flex;
+  margin-right: 1.5%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  margin-bottom: 2%;
 }
 
 .search-form input{
-  width: 80%;
+  border:none;
+  opacity: 100%;
+  width: 100%;
+  outline:none;
+  font-size: 25px;
+  background: transparent;
+  /* background: linear-gradient(to right,  rgb(87, 40, 84), rgb(35, 63, 88)); */
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  color: white;
 }
 
 .search-form button{
-  width: 20%;
+  border:none;
+  width: 9%;
+  opacity: 100%;
+  background: transparent;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
+.search-image{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+
+}
+/* ---------------- */
 .underobz{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
