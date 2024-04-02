@@ -38,3 +38,24 @@ func AllPosts() []models.Post {
 	}
 	return posts
 }
+
+func SearchPosts(q string) []models.Post {
+	db := newConnection()
+	defer db.Close()
+	rows, err := db.Query("select * from posts where name ilike $1", "%"+q+"%")
+	if err != nil {
+		panic(err)
+	}
+	defer rows.Close()
+	posts := []models.Post{}
+	for rows.Next() {
+		p := models.Post{}
+		err := rows.Scan(&p.Id, &p.Name, &p.Description, &p.Price, &p.Mark, &p.ImageUrl)
+		if err != nil {
+			fmt.Println(err)
+			continue
+		}
+		posts = append(posts, p)
+	}
+	return posts
+}

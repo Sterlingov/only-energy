@@ -4,13 +4,20 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"net/http"
 	"os"
 	"server/internal/database"
 	"server/internal/models"
 )
 
-func GetPosts() []byte {
-	var posts []models.Post = database.AllPosts()
+func GetPosts(r *http.Request) []byte {
+	var posts []models.Post
+	query := r.URL.Query().Get("search")
+	if query == "" {
+		posts = database.AllPosts()
+	} else {
+		posts = database.SearchPosts(query)
+	}
 	for i := range posts {
 		posts[i].ImageUrl = fmt.Sprintf("http://%s/image/%s", os.Getenv("DOMAIN"), posts[i].ImageUrl)
 	}

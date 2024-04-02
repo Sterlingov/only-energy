@@ -24,10 +24,12 @@ func main() {
 	log.Print("Server started")
 	m := mux.NewRouter()
 	m.Methods("GET").Path("/posts").HandlerFunc(delivery.LoggerMiddleware(delivery.AuthMiddleware(delivery.GetPostsHandler)))
-	m.Methods("GET").Path("/image/{imageId}").HandlerFunc(delivery.LoggerMiddleware(delivery.AuthMiddleware(delivery.GetImageHandler)))
+	m.Methods("GET").Path("/image/{imageId}").HandlerFunc(delivery.LoggerMiddleware(delivery.GetImageHandler))
 	originsOk := handlers.AllowedOrigins([]string{"*"})
+	methodsOk := handlers.AllowedMethods([]string{"GET", "OPTIONS"})
+	headersOk := handlers.AllowedHeaders([]string{"Content-Type", "SuperSecretHeader"})
 	serverAddr := os.Getenv("DOMAIN") + ":" + os.Getenv("PORT")
-	if err := http.ListenAndServe(serverAddr, handlers.CORS(originsOk)(m)); err != nil {
+	if err := http.ListenAndServe(serverAddr, handlers.CORS(originsOk, methodsOk, headersOk)(m)); err != nil {
 		log.Fatal(err)
 	}
 }
