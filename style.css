@@ -279,10 +279,31 @@ font-family: cuyabra ;
 }
 
 .count-p{
-  margin-left: 5%;
   font-size: 25px;
   margin-bottom: 1%;
   color: white;
+}
+
+.search-form{
+  display: flex;
+}
+
+.search-form input{
+  width: 80%;
+}
+
+.search-form button{
+  width: 20%;
+}
+
+.underobz{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer{
