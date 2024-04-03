@@ -71,9 +71,17 @@ function getPostSearch(query) {
             });
         }else{
             var notFound = document.createElement("p")
+            var notFoundCont = document.createElement("div")
+            notFoundCont.classList.add("not-found-container")
             notFound.innerHTML = "Ничего не найдено("
-            postsContainer.appendChild(emptyDiv)
-            postsContainer.appendChild(notFound)
+            notFound.classList.add("not-found")
+            var notFoundCat = document.createElement("img")
+            notFoundCat.classList.add("not-found-cat")
+            notFoundCat.src = "https://http.cat/404"
+            notFoundCat.alt = "Я кощечка, сори"
+            notFoundCont.appendChild(notFound)
+            notFoundCont.appendChild(notFoundCat)
+            document.body.appendChild(notFoundCont)
         }
     }
     request.send();

@@ -284,7 +284,7 @@ font-family: cuyabra ;
   align-items: center;
   flex-direction: column;
   width: 26vw;
-  height: 900px;
+  height: 90vh;
   background: linear-gradient(to left, rgb(122, 97, 161), rgb(94, 153, 138));
   border-radius: 35px;
   padding: 15px;
@@ -562,6 +562,24 @@ font-family: cuyabra ;
 
 .DoNotPayAttention p{
   display: inline-block;
+}
+
+.not-found-container{
+  display:flex;
+  height: 66vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+.not-found-cat{
+  width: 20%;
+}
+
+.not-found{
+  color:rgb(255, 255, 255);
+  font-size: 4em;
+  margin: 0;
+  margin-bottom: 1%;
 }
 
 /* подключалки */
