@@ -56,6 +56,10 @@ function createPost(element){
 }
 
 function getPostSearch(query) {
+    var notFoundR = document.getElementsByClassName("not-found-container")[0]
+    if (notFoundR) {
+        notFoundR.remove()
+    }
     var url = apiUrl + "/posts?search=" + query
     var request = new XMLHttpRequest()
     request.open("GET", url)
